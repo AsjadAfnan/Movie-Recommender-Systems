@@ -27,13 +27,14 @@ Key Features:
 **Recommendation Page:** Discover personalized movie suggestions based on your preferences and ratings.
 
 ### Movie Details
-![Movie Information](images/Screenshot%202025-03-08%20at%2019.33.14.png)
-![Cast Information](images/Screenshot%202025-03-08%20at%2019.33.34.png)
+![Metrics Dashboard](images/Screenshot%202025-03-08%20at%2019.41.57.png)
+
 
 **Description Page:** Explore essential movie details and information about the cast.
 
 ### Performance Dashboard
-![Metrics Dashboard](images/Screenshot%202025-03-08%20at%2019.41.57.png)
+![Movie Information](images/Screenshot%202025-03-08%20at%2019.33.14.png)
+![Cast Information](images/Screenshot%202025-03-08%20at%2019.33.34.png)
 
 **Analytics Page:** Track recommendation performance and user engagement metrics.
 

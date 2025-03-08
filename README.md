@@ -21,21 +21,22 @@ Key Features:
 ## Sample Application Screenshots
 
 ### Recommendation Interface
-![Home Screen](images/Screenshot 2025-03-08 at 19.32.16.png)
-![Personalized Recommendations](images/Screenshot 2025-03-08 at 19.32.42.png)
+![Home Screen](images/Screenshot%202025-03-08%20at%2019.32.16.png)
+![Personalized Recommendations](images/Screenshot%202025-03-08%20at%2019.32.42.png)
 
 **Recommendation Page:** Discover personalized movie suggestions based on your preferences and ratings.
 
 ### Movie Details
-![Movie Information](images/Screenshot 2025-03-08 at 19.33.14.png)
-![Cast Information](images/Screenshot 2025-03-08 at 19.33.34.png)
+![Movie Information](images/Screenshot%202025-03-08%20at%2019.33.14.png)
+![Cast Information](images/Screenshot%202025-03-08%20at%2019.33.34.png)
 
 **Description Page:** Explore essential movie details and information about the cast.
 
 ### Performance Dashboard
-![Metrics Dashboard](images/Screenshot 2025-03-08 at 19.41.57.png)
+![Metrics Dashboard](images/Screenshot%202025-03-08%20at%2019.41.57.png)
 
 **Analytics Page:** Track recommendation performance and user engagement metrics.
+
 ## Installation Guide
 
 Follow these steps to set up and run the application:

@@ -165,8 +165,10 @@ def rate_movies():
             )
             
             # Convert star rating back to numeric
-            new_rating_value = len(new_rating) // 2 if new_rating else 0
-            
+            new_rating_value = len(new_rating) if new_rating else 0
+            #new_rating_value = len(new_rating) // 2 if new_rating else 0
+            #new_rating_value = len(new_rating)
+
             # Save rating if changed
             if new_rating_value != current_rating and new_rating_value > 0:
                 user_auth.save_user_rating(st.session_state.user, movie_id, new_rating_value)
@@ -290,8 +292,7 @@ def display_movie_details(new_df, movies, movies2):
             key=f"rate_detail_{movie_id}",
             index=rating_index
         )
-        # Convert star rating back to numeric
-        new_rating_value = len(new_rating) // 2 if new_rating else 0
+        new_rating_value = len(new_rating) if new_rating else 0
         
         # Save rating if changed
         if new_rating_value != current_rating and new_rating_value > 0:

@@ -381,28 +381,37 @@ def display_movie_details(new_df, movies, movies2):
         except:
             rating_index = 0
             
+        # Store the initial rating value in session state if not already present
+        rating_key = f"rate_detail_{movie_id}"
+        initial_rating_key = f"initial_rating_{movie_id}"
+        if initial_rating_key not in st.session_state:
+            st.session_state[initial_rating_key] = rating_index
+            
         new_rating = st.radio(
             "Select your rating",
             options=["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"],
             horizontal=True,
-            key=f"rate_detail_{movie_id}",
+            key=rating_key,
             index=rating_index
         )
-        # Convert star rating back to numeric
-        new_rating_value = len(new_rating) // 2 if new_rating else 0
+        # Convert star rating back to numeric (1-5 based on index + 1)
+        star_options = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"]
+        new_rating_value = star_options.index(new_rating) + 1 if new_rating else 0
         
-        # Save rating if changed
-        if new_rating_value != current_rating and new_rating_value > 0:
-            user_auth.save_user_rating(st.session_state.user, movie_id, new_rating_value)
-            st.success("Rating saved! Your recommendations will be updated.")
-            # Force refresh recommendations
-            st.session_state.refresh_recommendations = True
-            # Reset loaded movies count to show fresh recommendations
-            if 'loaded_movies_count' in st.session_state:
-                st.session_state.loaded_movies_count = 10
-            # Return to recommendations page
-            st.session_state.viewing_movie_details = False
-            st.rerun()
+        # Add a submit button to explicitly save the rating
+        if st.button("Save Rating", key=f"save_rating_{movie_id}"):
+            # Only save if the rating has actually changed from what's in the database
+            if new_rating_value != current_rating and new_rating_value > 0:
+                user_auth.save_user_rating(st.session_state.user, movie_id, new_rating_value)
+                st.success("Rating saved! Your recommendations will be updated.")
+                # Force refresh recommendations
+                st.session_state.refresh_recommendations = True
+                # Reset loaded movies count to show fresh recommendations
+                if 'loaded_movies_count' in st.session_state:
+                    st.session_state.loaded_movies_count = 10
+                # Return to recommendations page
+                st.session_state.viewing_movie_details = False
+                st.rerun()
 
     with text_col:
         # Display basic info

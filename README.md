@@ -51,7 +51,27 @@ Follow these steps to set up and run the application:
     ```
 
 2. **Create a Virtual Environment:** 
-   Make sure you have a virtual environment set up for your project.
+   Set up a virtual environment to manage dependencies for your project:
+
+   **For macOS/Linux:**
+   ```bash
+   # Create a virtual environment
+   python3 -m venv venv
+   
+   # Activate the virtual environment
+   source venv/bin/activate
+   ```
+
+   **For Windows:**
+   ```bash
+   # Create a virtual environment
+   python -m venv venv
+   
+   # Activate the virtual environment
+   venv\Scripts\activate
+   ```
+   
+   You can also use the already existing virtual environment if you have one.
 
 3. **Install Dependencies:**
    Install the required dependencies using the `requirements.txt` file:
